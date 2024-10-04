@@ -1,0 +1,24 @@
+[project]
+name = "BETpy"
+version = "1.0.1"
+authors = [
+  { name="Darren Liu", email="darrenliu06@gmail.com" },
+]
+description = "The software calculates the BET statistics, the corresponding p-value
+and the corresponding Binary Interaction Design (BID). The detailed calculation of BET statistics can be found in the paper [Zhang(2016)].
+Additionally, when there are p number of variables under the consideration,
+BETEDA can calculate the BET statistics and related quantities for all the
+pairs of variables. Various adjustment of multiplicity can be further applied
+to choose the pairs of variables that shows strong dependence"
+
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/dliu0/BETpy"
+Issues = "https://github.com/dliu0/BETpy/issues"
