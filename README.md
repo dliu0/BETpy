@@ -11,7 +11,53 @@ Developed by Darren Liu under the supervision of Prof. [Kai Zhang](https://zhang
 
 
 ## Interfaces
+### 1 Test one pair of variables
+```
+runBET(dataX, dataY, plot=False, find_min = False, max_depth=8, p_value_threshold=0.05)
+```
 
+|   Args  | Description |
+| -------- | ------- |
+| DataX  | A 1-D array or list of numbers    |
+| DataY  | A 1-D array or list of numbers  |
+| plot  | True or False. Whether to plot the data and results. Default = False  |
+| find_min  | True or False. Whether to find the Binary Interaction Design (BID) that has the lowest P-value     |
+| DataX  | A 1-D array or list    |
+| max_depth | Interger. Maximum depth of Binary Interaction Design (BID)      |
+| p_value_threshold    | (0,1), P-value threshold to determin dependency    |
+
+The return values are:
+
+|   Returns |  Description |
+| -------- | ------- |
+|p-value | p-value of the selected BID|
+|count of one group | number of points in one group |
+|binary interaction design| BID vector|
+
+### 2 Test all pairs of columns in a dataframe
+```
+test_variable_pairs(indf, max_depth=2,nprocess=1)
+```
+|   Args  | Description |
+| -------- | ------- |
+| indf  | A DataFrame with at least two columns of numerical values    |
+| max_depth  | Integer. Maximum depth of Binary Interaction Design (BID)    |
+| nprocess  | Integer. Number of processes to uss for parallel processessing. -1 means using # of cpus  |
+
+The return values are:
+|   Returns |  Description |
+| -------- | ------- |
+|DataFrame | The return dataframe consists of VarX, VarY, P-value, Min Count and Min Cross for each pair of columns in indf|
+
+### 3 Plot one pair
+```
+plot_cross(dataX, dataY, cross)
+```
+|   Args  | Description |
+| -------- | ------- |
+| DataX  | A 1-D array or list of numbers    |
+| DataY  | A 1-D array or list of numbers  |
+| cross  |  Binary Interaction Design (BID)  vector |
 
 ## Usage examples:
 ### 1 Test one pair of variables
